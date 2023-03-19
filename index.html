@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>نظام ادارة المنتجات</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>نظام ادارة المنتجات</h2>
+
+      <div id="inputs">
+        <input type="text" id="title" placeholder="اسم المنتج" />
+        <div class="price">
+          <input
+            onkeyup="getTotal();"
+            type="number"
+            id="price"
+            placeholder="السعر"
+          />
+          <input
+            onkeyup="getTotal();"
+            type="number"
+            id="taxes"
+            placeholder="الضرائب"
+          />
+          <input
+            onkeyup="getTotal();"
+            type="number"
+            id="ads"
+            placeholder="الاعلانات"
+          />
+          <input
+            onkeyup="getTotal();"
+            type="number"
+            id="discount"
+            placeholder="الخصم"
+          />
+          <small id="total"></small>
+        </div>
+        <input type="text" id="category" placeholder="الفئه" />
+        <input type="text" id="quantity" placeholder="الكميه" />
+        <input type="number" id="count" placeholder="العدد" />
+        <button id="submit">انشاء</button>
+      </div>
+
+      <div id="outputs">
+        <div class="search">
+          <input
+            onkeyup="searchData(this.value.toLowerCase())"
+            type="text"
+            id="search"
+            placeholder="بحث"
+          />
+          <div class="search-btn">
+            <button id="searchByName" onclick="getSearchMode(this.id)">بحث بالاسم</button>
+            <button id="searchByCategory" onclick="getSearchMode(this.id)">بحث بالفئه</button>
+          </div>
+        </div>
+
+        <div id="reset-value"></div>
+
+          <table>
+            <thead>
+              <tr>
+                <th>id</th>
+                <th>اسم المنتج</th>
+                <th>السعر</th>
+                <th>الضرائب</th>
+                <th>الاعلانات</th>
+                <th>الخصم</th>
+                <th>الفئه</th>
+                <th>الكميه</th>
+                <th>تحديث</th>
+                <th>حذف</th>
+              </tr>
+            </thead>
+  
+            <tbody id="tbody"></tbody>
+          </table>
+
+
+
+
+
+
+
+
+      </div>
+
+
+
+
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
